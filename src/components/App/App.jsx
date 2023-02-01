@@ -50,10 +50,10 @@ export class App extends Component {
 
   componentDidMount() {
     try {
-      const json = localStorage.getItem('contacts');
-      const contacts = JSON.parse(json);
-      if (contacts) {
-        this.setState(() => ({ contacts }));
+      const localStorageData = JSON.parse(localStorage.getItem('contacts'));
+
+      if (localStorageData) {
+        this.setState(() => ({ contacts: localStorageData }));
       }
     } catch (error) {}
   }
